@@ -1,0 +1,67 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: url(../images/loginBackground.jpg);
+	background-size: cover;
+	font-family: san-serif;
+}
+
+#registrationBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 300px;
+    height: 500px;
+    padding: 30px 40px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, .5);
+}
+
+#registrationBox table {
+	margin: 0 auto;
+}
+
+#registrationBox h1 {
+	margin: 0;
+	padding: 0 0 20px;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+#registrationBox p {
+	margin: 0;
+	padding: 0;
+	color: #ffffff;
+}
+
+#registrationBox .formInput {
+	width: 100%;
+	margin-bottom: 10px;
+	border: none;
+	border-bottom: 1px;
+	background: transparent;
+	outline: none;
+	height: 30px;
+	color: #ffffff;
+	font-size: 12px;
+	text-align: center;
+}
+
+#registrationBox ::placeholder { 
+   color: #808080;
+}
+
+#registrationBox .errorblock {
+	background-color: #ffEEEE;
+	border: 1px solid #ff0000;
+	padding: 8px;
+	margin: 16px;
+}
+
+#registrationBox .errorblock div {
+	color: #ff0000;
+}
+
+
