@@ -56,9 +56,7 @@
 				<tr>
 					<td>
 						<input type="submit" name="Submit" value="Register">
-						<form action="">
-							<input type="button" value="Back to Login" onclick="window.location.href='login.html';"/>
-						</form> 
+						<input type="button" onclick="location.href='login.html';" value="Back to Login" />
 					</td>
 				</tr>
 			</table>

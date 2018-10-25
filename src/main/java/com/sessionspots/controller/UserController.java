@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -24,6 +25,9 @@ public class UserController {
 	@Autowired
 	private UserAuthorityService userAuthorityService;
 	
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
+	
 	@RequestMapping(value = "/registration", method = RequestMethod.GET)
 	public String getRegisterUser(@ModelAttribute ("user") User user) {
 		
@@ -37,6 +41,7 @@ public class UserController {
 			return "registration";
 		}
 		else {
+			user.setPassword(passwordEncoder.encode(user.getPassword()));
 			userService.save(user);
 			
 			UserAuthority userAuthority = new UserAuthority();

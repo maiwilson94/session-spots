@@ -24,10 +24,10 @@
 		<form action="login" name="loginForm" method="POST">
 			<table>
 				<tr>
-					<td><p>Username:</p></td>
+					<td><p>Email:</p></td>
 				</tr>
 				<tr>
-					<td><input type="text" class="formInput" name="j_username" placeholder="Enter Username" /></td>
+					<td><input type="text" class="formInput" name="j_username" placeholder="Enter Email" /></td>
 				</tr>
 				<tr>
 					<td><p>Password:</p></td>
@@ -38,9 +38,7 @@
 				<tr>
 					<td>
 						<input type="submit" name="Submit" value="Log In">
-						<form action="">
-							<input type="button" value="Sign Up" onclick="window.location.href='registration.html';"/>
-						</form> 
+						<input type="button" onclick="location.href='registration.html';" value="Sign Up" />
 					</td>
 				</tr>
 			</table>

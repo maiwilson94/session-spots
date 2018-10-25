@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sessionspots.model.User;
+import com.sessionspots.model.UserInfo;
 import com.sessionspots.repository.UserRepository;
 
 @Service("userService")
@@ -19,4 +20,8 @@ public class UserServiceImpl implements UserService {
 		return userRepository.save(user);
 	}
 	
+	@Override
+	public UserInfo getUser(String email) {
+		return userRepository.getUser(email);
+	}
 }
