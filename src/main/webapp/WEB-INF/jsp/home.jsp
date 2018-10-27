@@ -16,5 +16,6 @@
 	    <input type="submit" value="Logout" />
 	</form>
 	
+	<input type="button" onclick="location.href='addSessionSpot.html';" value="Add Session" />
 </body>
 </html>

@@ -10,8 +10,11 @@ import com.sessionspots.model.UserInfo;
 @Repository("userRepository")
 public interface UserRepository extends JpaRepository<User, Long> {
 
+	@Query("Select u From User u where email = ?1")
+	User getUser(String email);
+	
 	@Query("Select new com.sessionspots.model.UserInfo(u.id, u.firstName, u.lastName, u.email, u.username) " +
 			"From User u where u.email = ?1")
-	UserInfo getUser(String email);
-
+	UserInfo getUserInfo(String email);
+	
 }

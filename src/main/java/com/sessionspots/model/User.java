@@ -18,7 +18,6 @@ public class User {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="user_id")
 	private Long id;
 	
 	@NotNull
@@ -43,6 +42,9 @@ public class User {
 
 	@OneToMany(mappedBy="user", cascade=CascadeType.ALL)
 	private List<UserAuthority> userAuthorities = new ArrayList<UserAuthority>();
+	
+	@OneToMany(mappedBy="user", cascade=CascadeType.ALL)
+	private List<SessionSpot> sessionSpots = new ArrayList<SessionSpot>();
 	
 	public String getEmail() {
 		return email;

@@ -10,7 +10,7 @@ import com.sessionspots.repository.UserRepository;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
-	
+
 	@Autowired
 	private UserRepository userRepository;
 
@@ -21,7 +21,12 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public UserInfo getUser(String email) {
+	public User getUser(String email) {
 		return userRepository.getUser(email);
+	}
+
+	@Override
+	public UserInfo getUserInfo(String email) {
+		return userRepository.getUserInfo(email);
 	}
 }

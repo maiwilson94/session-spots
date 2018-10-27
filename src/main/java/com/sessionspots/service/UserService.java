@@ -7,5 +7,7 @@ public interface UserService {
 	
 	User save(User user);
 	
-	UserInfo getUser(String email);
+	User getUser(String email);
+	
+	UserInfo getUserInfo(String email);
 }

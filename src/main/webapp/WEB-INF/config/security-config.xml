@@ -39,7 +39,7 @@
 				authorities-by-username-query=
 					"SELECT users.email as email, authorities.authority as role
 					 FROM users
-					 INNER JOIN authorities on users.user_id = authorities.user_user_id
+					 INNER JOIN authorities on users.id = authorities.user_id
 					 WHERE users.email=?" />
 		</authentication-provider>		
 	</authentication-manager>

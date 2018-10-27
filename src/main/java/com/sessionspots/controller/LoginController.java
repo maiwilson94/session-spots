@@ -25,11 +25,11 @@ public class LoginController {
 		return "login";
 	}
 	
-	@RequestMapping(value = "/index.html", method = RequestMethod.GET)
+	@RequestMapping(value = {"/", "/index.html"}, method = RequestMethod.GET)
 	public String loginSubmitted(ModelMap model) {
 		
 		String email = ((UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
-		UserInfo user = userService.getUser(email);
+		UserInfo user = userService.getUserInfo(email);
 		model.addAttribute("user", user);
 		
 		return "home";
