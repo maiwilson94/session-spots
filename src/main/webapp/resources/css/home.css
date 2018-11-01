@@ -1,0 +1,32 @@
+#content {
+	margin: 0 auto;
+	width: 50%;
+}
+
+#addSessionModal .modal-title {
+	text-align: center;
+	font-weight: bold;
+}
+
+#addSessionModal table {
+	border-collapse: separate;
+	border-spacing: 10px;
+	margin: 0 auto;
+}
+
+#addSessionModal p {
+	margin: 0;
+	padding: 0;
+}
+
+#addSessionModal .formInput {
+	text-align: center;
+}
+
+#addSessionModal ::placeholder { 
+   color: #808080;
+}
+
+#dataTableContent {
+	margin-top: 50px;
+}

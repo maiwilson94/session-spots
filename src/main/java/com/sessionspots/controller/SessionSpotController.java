@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sessionspots.model.SessionSpot;
+import com.sessionspots.model.SessionSpotInfo;
 import com.sessionspots.model.User;
 import com.sessionspots.model.UserInfo;
 import com.sessionspots.service.SessionSpotService;
@@ -35,13 +37,7 @@ public class SessionSpotController {
 	
 	private String LocationIQToken = "8c51d31abed9b7";
 	
-	@RequestMapping(value = "/addSessionSpot", method = RequestMethod.GET)
-	public String getAddSessionSpot(@ModelAttribute ("sessionspot") SessionSpot sessionSpot) {
-		
-		return "addSessionSpot";
-	}
-	
-	@RequestMapping(value = "/addSessionSpot", method = RequestMethod.POST) 
+	@RequestMapping(value = {"/", "index.html"}, method = RequestMethod.POST) 
 	public String addSessionSpot(@Valid @ModelAttribute ("sessionspot") SessionSpot sessionSpot, ModelMap model, HttpSession session, BindingResult result) {
 		
 		if (result.hasErrors()) {
@@ -83,6 +79,14 @@ public class SessionSpotController {
 			sessionSpotService.save(sessionSpot);
 		}
 		
+		model.addAttribute("sessionspot", new SessionSpot());
+		
 		return "home";
+	}
+	
+	@RequestMapping(value = "/sessionSpots", method = RequestMethod.GET)
+	public List<SessionSpotInfo> getAllSessionSpots() {
+		
+		return sessionSpotService.getAllSessionSpots();
 	}
 }
